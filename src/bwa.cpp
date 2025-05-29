@@ -42,6 +42,8 @@ Authors: Vasimuddin Md <vasimuddin.md@intel.com>; Sanchit Misra <sanchit.misra@i
 #include "kvec.h"
 #include "memcpy_bwamem.h"
 
+
+#ifndef __arm64__
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -50,6 +52,7 @@ extern "C" {
 #include <snprintf_s.h>
 #ifdef __cplusplus
 }
+#endif
 #endif
 
 int bwa_verbose = 3;
