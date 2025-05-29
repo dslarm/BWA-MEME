@@ -37,7 +37,11 @@ Authors: Vasimuddin Md <vasimuddin.md@intel.com>; Sanchit Misra <sanchit.misra@i
 #include<set>
 #include <ctime>
 #include<fstream>
+#if defined (__arm64__) or defined (__aarch64__)
+#include <sse2neon.h>
+#else
 #include <emmintrin.h>
+#endif
 #include <inttypes.h>
 #include <limits.h>
 

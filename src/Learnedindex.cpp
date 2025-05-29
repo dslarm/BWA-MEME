@@ -34,7 +34,11 @@
 #include <math.h>
 #include <fstream>
 #include <iostream>
+#if defined (__arm64__) or defined (__aarch64__)
+#include <sse2neon.h>
+#else
 #include <emmintrin.h>
+#endif
 #include "utils.h"
 #include "Learnedindex.h"
 #include "LearnedIndex_seeding.h"

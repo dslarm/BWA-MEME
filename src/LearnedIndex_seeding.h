@@ -44,6 +44,9 @@
 #include "profiling.h"
 
 #include "memcpy_bwamem.h"
+#if defined (__arm64__) or defined (__aarch64__)
+#include <sse2neon.h>
+#else
 #if (__AVX512BW__ || __AVX2__)
 #include <immintrin.h>
 #else
@@ -51,6 +54,8 @@
 #define __mmask8 uint8_t
 #define __mmask16 uint16_t
 #endif
+#endif
+
 #include "ertseeding.h"
 
 #ifdef __cplusplus
